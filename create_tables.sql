@@ -9,7 +9,7 @@ CREATE USER 'tifosi'@'localhost' IDENTIFIED BY 'password';
 GRANT ALL PRIVILEGES ON tifosi.* TO 'tifosi'@'localhost';
 FLUSH PRIVILEGES;
 
--- Création des tables selon le schéma fourni
+
 -- Table 'client'
 CREATE TABLE client (
     id_client INT PRIMARY KEY AUTO_INCREMENT,
@@ -31,7 +31,7 @@ CREATE TABLE ingredient (
     nom_ingredient VARCHAR(45) NOT NULL
 );
 
--- Table 'comprend' (relation entre focaccia et ingredient)
+-- Table 'comprend' 
 CREATE TABLE comprend (
     id_focaccia INT,
     id_ingredient INT,
@@ -52,7 +52,7 @@ CREATE TABLE marque (
     nom_marque VARCHAR(45) NOT NULL
 );
 
--- Table 'appartient' (relation entre boisson et marque)
+-- Table 'appartient' 
 CREATE TABLE appartient (
     id_boisson INT,
     id_marque INT,
@@ -68,7 +68,7 @@ CREATE TABLE menu (
     prix_menu FLOAT
 );
 
--- Table 'contient' (relation entre menu et boisson)
+-- Table 'contient' 
 CREATE TABLE contient (
     id_menu INT,
     id_boisson INT,
@@ -77,7 +77,7 @@ CREATE TABLE contient (
     FOREIGN KEY (id_boisson) REFERENCES boisson(id_boisson)
 );
 
--- Table 'paye' (paiement par un client)
+-- Table 'paye' 
 CREATE TABLE paye (
     id_client INT,
     id_menu INT,
@@ -87,7 +87,7 @@ CREATE TABLE paye (
     FOREIGN KEY (id_menu) REFERENCES menu(id_menu)
 );
 
--- Table 'achete' (achat de focaccia par un client)
+-- Table 'achete' 
 CREATE TABLE achete (
     id_client INT,
     id_focaccia INT,

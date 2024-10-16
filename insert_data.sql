@@ -26,7 +26,7 @@ INSERT INTO ingredient (id_ingredient, nom_ingredient) VALUES
 (24, 'Tomate cerise');
 
 
-
+-- Insertion des foccacia
 INSERT INTO focaccia (id_focaccia, nom_focaccia, prix_focaccia) VALUES
 (1, 'Mozaccia', 9.80),
 (2, 'Gorgonzollaccia', 10.80),
@@ -62,7 +62,7 @@ INSERT INTO boisson (id_boisson, nom_boisson) VALUES
 (12, 'Eau de source');
 
 
--- Association des boissons avec leurs marques (appartient)
+-- Association des boissons avec leurs marques 
 INSERT INTO appartient (id_boisson, id_marque) VALUES
 (1, 1),
 (2, 1),
@@ -77,7 +77,7 @@ INSERT INTO appartient (id_boisson, id_marque) VALUES
 (11, 3),
 (12, 2);
 
--- Association des focaccia avec leurs ingredients (comprend)
+-- Association des focaccia avec leurs ingredients 
 INSERT INTO comprend (id_focaccia, id_ingredient) VALUES
 (1, 1),
 (1, 5),
